@@ -1,0 +1,85 @@
+Guillem Pacheco
+
+Ej 1
+
+#include <stdio.h>
+#include <string.h>
+typedef struct {
+ int id;
+ int codpost;
+ char pregunta[100];
+ int valoracion;
+} Encuesta;
+
+typedef struct {
+ Encuesta encuestas [100];
+ int num;
+} ListaEncuestas;
+
+Ejercicio 2
+
+void DameValoracionCodigos (ListaClientes *lista, int parametro, char codigospostales [100]) 
+{
+	int i;
+	for (i = 0; i < lista->num; i++)
+	if (lista->clientes[i].valoracion >= parametro) 
+{
+	sprintf (codigospostales, "%s = %s", codigospostales, lista->encuestas[i].codigospostales);
+}
+}
+
+Ejercicio 3
+
+int main(int argc, char *argv[]) {
+
+int codigo;
+char codigos[100];
+ListaEncuestas miLista;
+
+miLista.encuestas[0].codpost = 08860;
+miLista.encuestas[1].codpost = 08861;
+miLista.encuestas[2].codpost = 08862;
+
+miLista.encuestas[0].valoracion = 4;
+miLista.encuestas[1].valoracion = 1;
+miLista.encuestas[2].valoracion = 7;
+
+miLista.num= 3;
+
+printf("Escribe un código postal: ");
+scanf("%d, &codpost");
+
+DameValoracon(&miLista, codpost, valoracion);
+if strcmp(codpost[100], NULL == 0)
+{
+printf("No hay niguna encuesta que cumpla esa condición");
+}
+else
+{
+printf("Se ha encontrado una encuesta con ese codigo postal");
+}
+
+return 0;
+
+
+LINUX
+
+Ejercicio 1
+
+grep correo@correo.com ~ >> emails.txt
+
+Ejercicio 2
+
+contador=0
+for f in *.txt 
+do
+	echo $f
+	r = 'grep $1 $f | wc -l'
+	contador = '$contador + $r'
+done
+
+if[$cont -gt N] then
+		echo "demasiada lineas"
+	else
+		echo "lineas suficiente"
+	fi
